@@ -23,7 +23,7 @@ public class PlayerSeasonRepository {
                 fgm, fga, fg_pct,
                 fg3m, fg3a, fg3_pct,
                 ftm, fta, ft_pct
-            FROM mv_player_seasons_summary
+            FROM mv_player_season_summary
             WHERE player_id = ?
             ORDER BY season DESC
                 """;
