@@ -3,7 +3,7 @@ package com.nbazone.backend.dto;
 public class PlayerSeasonDto {
     private Long playerId;
     private Integer season;
-    private Integer gamesPlayed;
+    private Long gamesPlayed;
 
     private Double mpg;
     private Double ppg;
@@ -13,21 +13,21 @@ public class PlayerSeasonDto {
     private Double bpg;
     private Double tpg;
 
-    private Integer fgm;
-    private Integer fga;
+    private Long fgm;
+    private Long fga;
     private Double fgPct;
 
-    private Integer fg3m;
-    private Integer fg3a;
+    private Long fg3m;
+    private Long fg3a;
     private Double fg3Pct;
 
-    private Integer ftm;
-    private Integer fta;
+    private Long ftm;
+    private Long fta;
     private Double ftPct;
 
     public PlayerSeasonDto() {}
 
-    public PlayerSeasonDto(Long playerId, Integer season, Integer gamesPlayed, Double mpg, Double ppg, Double rpg, Double apg, Double spg, Double bpg, Double tpg, Integer fgm, Integer fga, Double fgPct, Integer fg3m, Integer fg3a, Double fg3Pct, Integer ftm, Integer fta, Double ftPct) {
+    public PlayerSeasonDto(Long playerId, Integer season, Long gamesPlayed, Double mpg, Double ppg, Double rpg, Double apg, Double spg, Double bpg, Double tpg, Long fgm, Long fga, Double fgPct, Long fg3m, Long fg3a, Double fg3Pct, Long ftm, Long fta, Double ftPct) {
         this.playerId = playerId;
         this.season = season;
         this.gamesPlayed = gamesPlayed;
@@ -57,7 +57,7 @@ public class PlayerSeasonDto {
     public Integer getSeason() {
         return season;
     }
-    public Integer getGamesPlayed() {
+    public Long getGamesPlayed() {
         return gamesPlayed;
     }
     public Double getMpg() {
@@ -81,28 +81,28 @@ public class PlayerSeasonDto {
     public Double getTpg() {
         return tpg;
     }
-    public Integer getFgm() {
+    public Long getFgm() {
         return fgm;
     }
-    public Integer getFga() {
+    public Long getFga() {
         return fga;
     }
     public Double getFgPct() {
         return fgPct;
     }
-    public Integer getFg3m() {
+    public Long getFg3m() {
         return fg3m;
     }
-    public Integer getFg3a() {
+    public Long getFg3a() {
         return fg3a;
     }
     public Double getFg3Pct() {
         return fg3Pct;
     }
-    public Integer getFtm() {
+    public Long getFtm() {
         return ftm;
     }
-    public Integer getFta() {
+    public Long getFta() {
         return fta;
     }
     public Double getFtPct() {

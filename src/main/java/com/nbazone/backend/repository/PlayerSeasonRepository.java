@@ -5,6 +5,7 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
+import java.math.BigDecimal;
 
 @Repository
 public class PlayerSeasonRepository {
@@ -33,29 +34,31 @@ public class PlayerSeasonRepository {
             (rs, rownum) -> new PlayerSeasonDto(
                 rs.getLong("player_id"),
                 rs.getInt("season"),
-                rs.getInt("games_played"),
+                rs.getObject("games_played", Long.class),
 
-                rs.getObject("mpg", Double.class),
-                rs.getObject("ppg", Double.class),
-                rs.getObject("rpg", Double.class),
-                rs.getObject("apg", Double.class),
-                rs.getObject("spg", Double.class),
-                rs.getObject("bpg", Double.class),
-                rs.getObject("tpg", Double.class),
+                bdTDouble(rs.getBigDecimal("mpg")),
+                bdTDouble(rs.getBigDecimal("ppg")),
+                bdTDouble(rs.getBigDecimal("rpg")),
+                bdTDouble(rs.getBigDecimal("apg")),
+                bdTDouble(rs.getBigDecimal("spg")),
+                bdTDouble(rs.getBigDecimal("bpg")),
+                bdTDouble(rs.getBigDecimal("tpg")),
 
-                rs.getObject("fgm", Integer.class),
-                rs.getObject("fga", Integer.class),
-                rs.getObject("fg_pct", Double.class),
+                rs.getObject("fgm", Long.class),
+                rs.getObject("fga", Long.class),
+                bdTDouble(rs.getBigDecimal("fg_pct")),
 
-                rs.getObject("fg3m", Integer.class),
-                rs.getObject("fg3a", Integer.class),
-                rs.getObject("fg3_pct", Double.class),
-
-                rs.getObject("ftm", Integer.class),
-                rs.getObject("fta", Integer.class),
-                rs.getObject("ft_pct", Double.class)
+                rs.getObject("fg3m", Long.class),
+                rs.getObject("fg3a", Long.class),
+                bdTDouble(rs.getBigDecimal("fg3_pct")),   
+                rs.getObject("ftm", Long.class),
+                rs.getObject("fta", Long.class),
+                bdTDouble(rs.getBigDecimal("ft_pct"))
             ),
             playerId
         );
+    }
+    private static Double bdTDouble(BigDecimal bd) {
+        return bd != null ? bd.doubleValue() : null;
     }
 }
