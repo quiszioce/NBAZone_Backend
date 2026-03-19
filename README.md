@@ -46,7 +46,7 @@ PostgreSQL
 Steps:
 
 Clone the repo
-git clone https://github.com/quiszioce/nbazone-backend.git
+git clone https://github.com/quiszioce/NBAZone_Backend.git
 
 Navigate into folder
 cd nbazone-backend
